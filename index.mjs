@@ -6,7 +6,7 @@ dotenv.config();
 
 import bookRoutes from "./routes/book_route.mjs";
 
-const app = express();
+export const app = express();
 const PORT = process.env.PORT || 4002;
 const MONGO_URI = process.env.MONGO_URI;
 

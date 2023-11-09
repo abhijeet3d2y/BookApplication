@@ -1,7 +1,7 @@
 import BookModel from '../models/book_model.mjs';
 
 // Update the contents of a book by ID
-const updateBook = ('/updatebook/:id', async (req, res) => {
+const updateBook = async (req, res) => {
     try {
         const bookId = req.params.id;
         const { newContents } = req.body;
@@ -27,6 +27,6 @@ const updateBook = ('/updatebook/:id', async (req, res) => {
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
-});
+};
 
 export default updateBook;

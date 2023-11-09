@@ -1,7 +1,7 @@
 import Book from '../models/book_model.mjs'
 
 // Get all books
-const getAllBooks = ('/getbooks', async (req, res) => {
+const getAllBooks = async (req, res) => {
   try {
     // Retrieve all books from the database
     const books = await Book.find();
@@ -11,6 +11,6 @@ const getAllBooks = ('/getbooks', async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
-});
+};
 
 export default getAllBooks;

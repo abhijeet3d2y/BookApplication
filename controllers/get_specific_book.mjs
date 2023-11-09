@@ -1,7 +1,7 @@
 import Book from '../models/book_model.mjs';
 
 // Get a specific book by ID
-const specificBook = ('/getbook/:id', async (req, res) => {
+const specificBook = async (req, res) => {
   try {
     const bookId = req.params.id;
 
@@ -16,6 +16,6 @@ const specificBook = ('/getbook/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
-});
+};
 
 export default specificBook;

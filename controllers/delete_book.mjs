@@ -1,7 +1,7 @@
 import Book from '../models/book_model.mjs';
 
 // Delete a specific book by ID
-const deleteBook = ('/deletebook/:id', async (req, res) => {
+const deleteBook = async (req, res) => {
   try {
     const bookId = req.params.id;
 
@@ -11,13 +11,13 @@ const deleteBook = ('/deletebook/:id', async (req, res) => {
       return res.status(404).json({ error: 'Book not found' });
     }
 
-    // Delete book from database
+    // Delete book from the database
     await Book.findByIdAndDelete(bookId);
 
-    res.status(200).send("Book is deleted"); // Respond with a 204 No Content status to indicate successful deletion
+    res.status(200).send("Book is deleted");
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
-});
+};
 
 export default deleteBook;
